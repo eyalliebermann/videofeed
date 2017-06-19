@@ -1,0 +1,27 @@
+{
+  "name": "videofeed",
+  "version": "1.0.0",
+  "description": "simple video feed app",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eyalliebermann/videofeed.git"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "author": "Eyal Liebermann",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eyalliebermann/videofeed/issues"
+  },
+  "homepage": "https://github.com/eyalliebermann/videofeed#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
