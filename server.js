@@ -1,19 +1,6 @@
 const path = require('path');
-const express = require('express')
-const app = express()
-
-
-app.use(express.static('public'));
-
-app.use('/', express.static(path.join(__dirname, 'public/index.js')));
-
-app.get('/v1.0/videos', function (req, res) {
-  res.json(VIDEOS);
-})
-
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
-});
+const express = require('express');
+const app = express();
 
 const VIDEOS = {
   "items": [
@@ -55,3 +42,24 @@ const VIDEOS = {
 };
 
 
+
+
+app.set('port', (process.env.PORT || 5000));
+
+app.use(express.static(__dirname + '/public'));
+
+app.use('/', express.static(path.join(__dirname, 'public/index.js')));
+
+app.get('/v1.0/videos', function (req, res) {
+  res.json(VIDEOS);
+});
+
+app.listen(app.get('port'), function () {
+  console.log('Videofeed app listening!');
+    console.log(`PORT:${app.get('port')}`);
+
+});
+
+
+// == Export our app ==
+module.exports = app;
