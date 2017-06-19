@@ -54,6 +54,13 @@ app.get('/v1.0/videos', function (req, res) {
   res.json(VIDEOS);
 });
 
+app.get('/v1.0/videos/filter-by/:source', function (req, res) {
+
+let filterVal = ['facebook','youtube','url'].find(allowedFilter=>allowedFilter==req.params.source.toLowerCase());
+ let filtered =  filterVal? VIDEOS.items.filter(item=>item.source==filterVal):VIDEOS.items;
+  res.json({items: filtered});
+});
+
 app.listen(app.get('port'), function () {
   console.log('Videofeed app listening!');
     console.log(`PORT:${app.get('port')}`);
