@@ -80,4 +80,43 @@ describe('GET videos', function () {
       })
       .end(done);
   });
+
+  it('respond with facbook filter returns only facebook', function (done) {
+    request(app)
+      .get('/api/v1.0/videos/filter-by/facebook')
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .expect(function (res) {
+        if (res.body.items.length === FEED.items.length) throw new Error("No filtering occured");
+        if (!res.body.items.every(item => item.source === 'facebook')) throw new Error("No filtering occured");
+      })
+      .end(done);
+  });
+
+  it('respond with facbook filter returns only url', function (done) {
+    request(app)
+      .get('/api/v1.0/videos/filter-by/url')
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .expect(function (res) {
+        if (res.body.items.length === FEED.items.length) throw new Error("No filtering occured");
+        if (!res.body.items.every(item => item.source === 'url')) throw new Error("No filtering occured");
+      })
+      .end(done);
+  });
+
+  it('respond with facbook filter returns only youtube', function (done) {
+    request(app)
+      .get('/api/v1.0/videos/filter-by/youtube')
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .expect(function (res) {
+        if (res.body.items.length === FEED.items.length) throw new Error("No filtering occured");
+        if (!res.body.items.every(item => item.source === 'youtube')) throw new Error("No filtering occured");
+      })
+      .end(done);
+  });
 });

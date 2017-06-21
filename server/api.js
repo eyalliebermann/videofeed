@@ -13,8 +13,8 @@ module.exports = function (app) {
   });
 
   function sendResponse(req, res, feed, filter) {
-    let filterVal = ['facebook', 'youtube', 'url'].find(allowedFilter => allowedFilter == filter);
-    let filtered = filterVal ? feed.items.filter(item => item.source == filterVal) : feed.items;
+    let filterVal = ['facebook', 'youtube', 'url'].find(allowedFilter => allowedFilter === filter);
+    let filtered = filterVal ? feed.items.filter(item => item.source === filterVal) : feed.items;
 
     res.json({
       items: filtered
