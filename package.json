@@ -4,7 +4,7 @@
   "description": "simple video feed app",
   "main": "server.js",
   "scripts": {
-    "test": "mocha",
+    "test": "./node_modules/mocha/bin/mocha tests/**/*Test.js --reporter spec",
     "start": "node server.js"
   },
   "repository": {
