@@ -3,8 +3,7 @@ const express = require('express');
 const app = express();
 
 const VIDEOS = {
-  "items": [
-    {
+  "items": [{
       "title": "Be a winner!",
       "type": "video",
       "source": "youtube",
@@ -56,14 +55,17 @@ app.get('/v1.0/videos', function (req, res) {
 
 app.get('/v1.0/videos/filter-by/:source', function (req, res) {
 
-let filterVal = ['facebook','youtube','url'].find(allowedFilter=>allowedFilter==req.params.source.toLowerCase());
- let filtered =  filterVal? VIDEOS.items.filter(item=>item.source==filterVal):VIDEOS.items;
-  res.json({items: filtered});
+  let filterVal = ['facebook', 'youtube', 'url'].find(allowedFilter => allowedFilter == req.params.source.toLowerCase());
+  let filtered = filterVal ? VIDEOS.items.filter(item => item.source == filterVal) : VIDEOS.items;
+
+  res.json({
+    items: filtered
+  });
 });
 
 app.listen(app.get('port'), function () {
   console.log('Videofeed app listening!');
-    console.log(`PORT:${app.get('port')}`);
+  console.log(`PORT:${app.get('port')}`);
 
 });
 

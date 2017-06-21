@@ -1,7 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,97 +13,113 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://blackrockdigital.github.io/startbootstrap-clean-blog/css/clean-blog.min.css" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
-  </head>
+</head>
 
-  <body>
+<body>
 
     <!-- The following is required as part of Facebook sdk loading as described here https://developers.facebook.com/docs/plugins/embedded-video-player -->
-  <div id="fb-root"></div>
- 
- <!-- Fixed navbar -->
+    <div id="fb-root"></div>
+
+    <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Video Feed</a>
+                <a class="navbar-brand" href="#">Video Feed</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Filter By Source<span class="caret"></span></a>
+                        <ul id="filterByDropdown" class="dropdown-menu">
+                            <li><a href="#">Show 'em all!</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://www.linkedin.com/in/eyalliebermann/">By Eyal Liebermann</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Filter By Source<span class="caret"></span></a>
-              <ul id="filterByDropdown" class="dropdown-menu">
-                <li><a href="#">Show 'em all!</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="https://www.linkedin.com/in/eyalliebermann/">By Eyal Liebermann</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
     </nav>
 
-  
+
     <!-- Main Content -->
 
     <div class="container">
         <div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="true">
     Dropdown
     <span class="caret"></span>
   </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
-</div>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+            </ul>
         </div>
-    <div class="container">
+    </div>
+    <div id="videos" class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="col-md-10 col-md-offset-1">
                 <div class="post-preview">
                     <a href="post.html">
                         <h2 class="post-title">
-                          Be a winner!
+                            Be a winner!
                         </h2>
-                    <div class="videoWrapper">
-                        <iframe width="560" height="349" src="http://www.youtube.com/embed/I33u_EHLI3w?rel=0&hd=1" frameborder="0" allowfullscreen></iframe>
-                    </div>
+                        <div class="videoWrapper">
+                            <iframe width="560" height="349" src="http://www.youtube.com/embed/I33u_EHLI3w?rel=0&hd=1" frameborder="0" allowfullscreen></iframe>
+                        </div>
                     </a>
                     <p class="post-meta">Posted on <a href="#">YouTube</a>. 12451409 views.</p>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
                 <hr>
                 <div class="post-preview">
-                    <a href="post.html">
+                    <a href="http://www.facebook.com/video/video.php?v=1052114818157758">
                         <h2 class="post-title">
                             How to prepare great beer </h2>
-                    <div class="fb-video" data-href="http://www.facebook.com/video/video.php?v=1052114818157758"  data-allowfullscreen="true" data-width="500"></div>
+                        <div class="fb-video" data-href="http://www.facebook.com/video/video.php?v=1052114818157758" data-allowfullscreen="true"
+                            data-width="500"></div>
                     </a>
                     <p class="post-meta">Posted on <a href="#">Facebook</a>. 4569654 views.</p>
-                </div>   
-                  <div class="post-preview">
-                    <a href="post.html">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <hr>
+                <div class="post-preview">
+                    <a href="http://cdn.playbuzz.com/content/feed/video-1.mp4">
                         <h2 class="post-title">
                             How to prepare great beer </h2>
                         <div class="videoWrapper">
-                        <iframe width="560" height="349" src="http://cdn.playbuzz.com/content/feed/video-1.mp4" frameborder="0" allowfullscreen></iframe>
-                    </div>
+                            <iframe src="http://cdn.playbuzz.com/content/feed/video-1.mp4" frameborder="0" allowfullscreen></iframe>
+                        </div>
                     </a>
                     <p class="post-meta">Posted on <a href="#">the internet</a>. 8820 views.</p>
-                </div>        
+                </div>
             </div>
         </div>
     </div>
+
     <script src="./bootstrap-native.min.js"></script>
     <script src="./loadFacebookSdk.js"></script>
     <script src="./index.js"></script>
-  </body>
+</body>
+
 </html>
