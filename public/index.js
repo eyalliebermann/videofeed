@@ -40,6 +40,8 @@ function populateVideoFeed(filter) {
 function renderVideos(json) {
     var videoFeed = document.querySelector("#videos");
     var feedHtml = json.items.map(function (video) {
+
+
         return createVideoHtml(video);
     }).join('\n');
 
@@ -55,18 +57,18 @@ function createVideoHtml(video) {
                     <a href="' + video.url + '"> \
                         <h2 class="post-title">' +
         video.title +
-        '</h2> ' +
-        createVideoElement(video) +
-        ' </a> \
-                    <p class="post-meta">Posted on <a href="#">' + video.source + '</a>. ' + video.views + ' views.</p> \
+        '</h2> \
+        <div id="' + video.url + '">' +
+            createVideoElement(video) +
+        ' </div \
+            </a> \
+                    <p class="post-meta">' + video.views + ' views.</p> \
                 </div> \
             </div> \
         </div>';
 }
 
 function ensureVideoUrl(video) {
-
-
     if ('url' in video)
         return;
 
