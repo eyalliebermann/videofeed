@@ -3,8 +3,7 @@ const app = require('../server')
 const nock = require('nock');
 
 
-var FEED =
-{
+var FEED = {
   "items": [{
       "title": "Be a winner!",
       "type": "video",
@@ -43,9 +42,9 @@ var FEED =
 };
 
 var playbuzz = nock('https://cdn.playbuzz.com/')
-                .get('/content/feed/items')
-                .times(999)
-                .reply(200, FEED);
+  .get('/content/feed/items')
+  .times(999)
+  .reply(200, FEED);
 
 
 describe('GET videos', function () {
@@ -62,6 +61,23 @@ describe('GET videos', function () {
       .get('/api/v1.0/videos/filter-by/foo')
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
-      .expect(200, done);
+      .expect(200)
+      .expect(function (res) {
+        if (!res.body.items.length === FEED.items.length) throw new Error("No filtering should have occured");
+      })
+      .end(done);
+  });
+
+  it('respond with facbook filter returns only facebook', function (done) {
+    request(app)
+      .get('/api/v1.0/videos/filter-by/facebook')
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .expect(function (res) {
+        if (res.body.items.length === FEED.items.length) throw new Error("No filtering occured");
+        if (!res.body.items.every(item => item.source === 'facebook')) throw new Error("No filtering occured");
+      })
+      .end(done);
   });
 });
