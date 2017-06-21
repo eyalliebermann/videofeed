@@ -24,7 +24,7 @@ function run(event) {
     dropdownElment.addEventListener('click', function (event) {
         console.log('Dropdown elment clicked!');
         console.log('event.srcElment.innerText: ' + event.srcElement.innerText);
-        var filter = event.srcElement.innerText == allText ? null : event.srcElement.innerText.toLowerCase();
+        var filter = event.srcElement.innerText === allText ? null : event.srcElement.innerText.toLowerCase();
         populateVideoFeed(filter);
     });
 }
@@ -122,7 +122,7 @@ function getJson(url, success) {
     var xhr = new XMLHttpRequest(); //IE10 and moden browsers
     xhr.open('GET', url);
     xhr.onreadystatechange = function () {
-        if (xhr.readyState > 3 && xhr.status == 200) {
+        if (xhr.readyState > 3 && xhr.status === 200) {
             var json = JSON.parse(xhr.responseText);
             console.log('json recieved.');
             console.log(json);

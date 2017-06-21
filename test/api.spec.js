@@ -63,7 +63,7 @@ describe('GET videos', function () {
       .expect('Content-Type', /json/)
       .expect(200)
       .expect(function (res) {
-        if (!res.body.items.length === FEED.items.length) throw new Error("No filtering should have occured");
+        if (!res.body.items.length === FEED.items.length) throw new Error('No filtering should have occured');
       })
       .end(done);
   });
@@ -75,8 +75,8 @@ describe('GET videos', function () {
       .expect('Content-Type', /json/)
       .expect(200)
       .expect(function (res) {
-        if (res.body.items.length === FEED.items.length) throw new Error("No filtering occured");
-        if (!res.body.items.every(item => item.source === 'facebook')) throw new Error("No filtering occured");
+        if (res.body.items.length === FEED.items.length) throw new Error('No filtering occured');
+        if (!res.body.items.every(item => item.source === 'facebook')) throw new Error('No filtering occured');
       })
       .end(done);
   });
@@ -88,8 +88,8 @@ describe('GET videos', function () {
       .expect('Content-Type', /json/)
       .expect(200)
       .expect(function (res) {
-        if (res.body.items.length === FEED.items.length) throw new Error("No filtering occured");
-        if (!res.body.items.every(item => item.source === 'url')) throw new Error("No filtering occured");
+        if (res.body.items.length === FEED.items.length) throw new Error('No filtering occured');
+        if (!res.body.items.every(item => item.source === 'url')) throw new Error('No filtering occured');
       })
       .end(done);
   });
@@ -101,8 +101,8 @@ describe('GET videos', function () {
       .expect('Content-Type', /json/)
       .expect(200)
       .expect(function (res) {
-        if (res.body.items.length === FEED.items.length) throw new Error("No filtering occured");
-        if (!res.body.items.every(item => item.source === 'youtube')) throw new Error("No filtering occured");
+        if (res.body.items.length === FEED.items.length) throw new Error('No filtering occured');
+        if (!res.body.items.every(item => item.source === 'youtube')) throw new Error('No filtering occured');
       })
       .end(done);
   });
