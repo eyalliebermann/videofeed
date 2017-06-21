@@ -11,9 +11,9 @@ function run(event) {
     populateVideoFeed();
 
     var dropdownElment = document.querySelector('#filterByDropdown');
-    var nofilterString = 'All';
+    var allText = 'All';
     //TODO normalize usage of single quote double qoute
-    var listItems = [nofilterString, "Youtube", "Facebook", "Other"]
+    var listItems = [allText, "Youtube", "Facebook", "Url"]
         .map(function (filter) {
             return '<li id="' + filter.toLowerCase() + '"><a href="#">' + filter + '</a></li>';
         }).join('\n');
@@ -24,30 +24,29 @@ function run(event) {
     dropdownElment.addEventListener('click', function (event) {
         console.log('Dropdown elment clicked!');
         console.log('event.srcElment.innerText: ' + event.srcElement.innerText);
-        var filter = event.srcElement.innerText == nofilterString ? null : event.srcElement.innerText.toLowerCase();
+        var filter = event.srcElement.innerText == allText ? null : event.srcElement.innerText.toLowerCase();
         populateVideoFeed(filter);
     });
 }
 
 function populateVideoFeed(filter) {
     console.log('populateVideoFeed');
-    var url = '/v1.0/videos' + (filter ? '/filter-by/' + filter : '');
+    var url = '/v1.0/videos' + (filter ? '/filter-by/' + filter : '') ;
     getJson(url, function (json) {;
         renderVideos(json)
     });
 }
 
 function renderVideos(json) {
+    var videoFeed = document.querySelector("#videos");
     var feedHtml = json.items.map(function (video) {
         return createVideoHtml(video);
     }).join('\n');
 
-    var videoFeed = document.querySelector("#videos");
     videoFeed.innerHTML = feedHtml;
 }
 
 function createVideoHtml(video) {
-
     ensureVideoUrl(video);
     ensureVideoTitle(video);
     return '<div class="row"> \

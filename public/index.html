@@ -17,9 +17,7 @@
 
 <body>
 
-    <!-- The following is required as part of Facebook sdk loading as described here https://developers.facebook.com/docs/plugins/embedded-video-player -->
-    <div id="fb-root"></div>
-
+  
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -57,9 +55,8 @@
         <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="true">
-    Dropdown
-    <span class="caret"></span>
-  </button>
+                Dropdown <span class="caret"></span>
+            </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <li><a href="#">Action</a></li>
                 <li><a href="#">Another action</a></li>
@@ -69,53 +66,12 @@
             </ul>
         </div>
     </div>
-    <div id="videos" class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="post-preview">
-                    <a href="post.html">
-                        <h2 class="post-title">
-                            Be a winner!
-                        </h2>
-                        <div class="videoWrapper">
-                            <iframe width="560" height="349" src="http://www.youtube.com/embed/I33u_EHLI3w?rel=0&hd=1" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </a>
-                    <p class="post-meta">Posted on <a href="#">YouTube</a>. 12451409 views.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <hr>
-                <div class="post-preview">
-                    <a href="http://www.facebook.com/video/video.php?v=1052114818157758">
-                        <h2 class="post-title">
-                            How to prepare great beer </h2>
-                        <div class="fb-video" data-href="http://www.facebook.com/video/video.php?v=1052114818157758" data-allowfullscreen="true"
-                            data-width="500"></div>
-                    </a>
-                    <p class="post-meta">Posted on <a href="#">Facebook</a>. 4569654 views.</p>
-                </div>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <hr>
-                <div class="post-preview">
-                    <a href="http://cdn.playbuzz.com/content/feed/video-1.mp4">
-                        <h2 class="post-title">
-                            How to prepare great beer </h2>
-                        <div class="videoWrapper">
-                            <iframe src="http://cdn.playbuzz.com/content/feed/video-1.mp4" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                    </a>
-                    <p class="post-meta">Posted on <a href="#">the internet</a>. 8820 views.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="videos" class="container"></div>
+      
+    <!-- The following is required as part of Facebook sdk loading as described here https://developers.facebook.com/docs/plugins/embedded-video-player -->
+    <div id="fb-root"></div>
+
 
     <script src="./bootstrap-native.min.js"></script>
     <script src="./loadFacebookSdk.js"></script>
