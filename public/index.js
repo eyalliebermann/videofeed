@@ -31,7 +31,8 @@ function run(event) {
 
 function populateVideoFeed(filter) {
     console.log('populateVideoFeed');
-    getJson('/v1.0/videos', function (json) {;
+    var url = '/v1.0/videos' + (filter ? '/filter-by/' + filter : '');
+    getJson(url, function (json) {;
         renderVideos(json)
     });
 }
@@ -49,8 +50,6 @@ function createVideoHtml(video) {
 
     ensureVideoUrl(video);
     ensureVideoTitle(video);
-
-
     return '<div class="row"> \
             <div class="col-md-10 col-md-offset-1"> \
                 <div class="post-preview"> \
