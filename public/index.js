@@ -60,9 +60,8 @@ function createVideoHtml(video) {
         '</h2> \
         <div id="' + video.url + '">' +
             createVideoElement(video) +
-        ' </div \
-            </a> \
-                    <p class="post-meta">' + video.views + ' views.</p> \
+        ' </div \</a> \
+                    <p class="post-meta">Posted on <a href="#">' + video.source + '</a>. ' + video.views + ' views.</p> \
                 </div> \
             </div> \
         </div>';
