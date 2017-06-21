@@ -5,8 +5,9 @@ It's a simplified website SPA that displays a video feed from several sources.
 The feed source is the following url https://cdn.playbuzz.com/content/feed/items
 
 ## Behavior
-By default all videos are displayed
-User can filter by source type: Facebook, Youtube, Url
+Browsing to the root path would result in a nav-bar that includes the application name, and a blog like feed of viedos each having a title, view count and the video itself.
+The nav-bar is fixed to the top and at any point the user can filter the videos according to their source: Facebook,Youtube Url.
+Future versions would allow filtering by any type present in the video description and possibly by other criteria
 
 ## Components
 ### Client
