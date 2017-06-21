@@ -31,7 +31,7 @@ function run(event) {
 
 function populateVideoFeed(filter) {
     console.log('populateVideoFeed');
-    var url = '/v1.0/videos' + (filter ? '/filter-by/' + filter : '') ;
+    var url = 'api/v1.0/videos' + (filter ? '/filter-by/' + filter : '') ;
     getJson(url, function (json) {;
         renderVideos(json)
     });
